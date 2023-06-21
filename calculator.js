@@ -1,3 +1,7 @@
+//display
+const display = document.querySelector('.display');
+display.textContent = "1020485";
+
 function operate(a, operator, b){
     let firstNumber = a,
     secondNumber = b,
