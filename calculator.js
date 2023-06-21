@@ -1,27 +1,38 @@
-function operate(operator, a, b){
-    switch (operator){
-        case '+' : add(a,b);
+function operate(a, operator, b){
+    let firstNumber = a,
+    secondNumber = b,
+    findOperator = operator;
+    switch (findOperator){
+        case '+' : return add(firstNumber,secondNumber);
         break;
-        case '-' : subtract(a,b);
+        case '-' : return subtract(firstNumber,secondNumber);
         break;
-        case '*' : multiply(a,b);
+        case '*' : return multiply(firstNumber,secondNumber);
         break;
-        case '/' : divide(a,b);
+        case '/' : return divide(firstNumber,secondNumber);
         break;
     }
 }
-function add(){
-    return a+b;
+function add(a, b){
+    let firstNumber = a,
+    secondNumber = b;
+    return firstNumber + secondNumber;
 }
 
-function subtract(){
-    return a-b;
+function subtract(a, b){
+    let firstNumber = a,
+    secondNumber = b;
+    return firstNumber - secondNumber;
 }
 
-function multiply(){
-    return a*b;
+function multiply(a, b){
+    let firstNumber = a,
+    secondNumber = b;
+    return firstNumber * secondNumber;
 }
 
-function divide(){
-    return a/b;
+function divide(a, b){
+    let firstNumber = a,
+    secondNumber = b;
+    return firstNumber / secondNumber;
 }
