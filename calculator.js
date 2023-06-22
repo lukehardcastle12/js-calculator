@@ -1,8 +1,8 @@
 //display
 const display = document.querySelector('.display');
 display.textContent;
-let btns = document.querySelector('.buttons');
-let btnChildren = btns.children
+let numBtns = document.querySelector('.numbers');
+let btnChildren = numBtns.children
 console.log(btnChildren);
 for (i of btnChildren){
     i.addEventListener('click',function(){
