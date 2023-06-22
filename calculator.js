@@ -1,6 +1,31 @@
 //display
 const display = document.querySelector('.display');
-display.textContent = "1020485";
+display.textContent;
+let btns = document.querySelector('.buttons');
+let btnChildren = btns.children
+console.log(btnChildren);
+for (i of btnChildren){
+    i.addEventListener('click',function(){
+        display.textContent += this.innerHTML;
+    });
+    
+}
+let clearBtn = document.getElementById('clear');
+
+clearBtn.addEventListener('click',() => clear());
+
+//make buttons push to display
+function displayNumber(i){
+    buttonPressed = i;
+    switch (buttonPressed){
+        case 0 : display.textContent += '7';
+                console.log(buttonPressed);
+                break;
+    }
+}
+function clear(){
+    display.textContent = "";
+}
 
 function operate(a, operator, b){
     let firstNumber = a,
