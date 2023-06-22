@@ -7,38 +7,31 @@ console.log(btnChildren);
 for (i of btnChildren){
     i.addEventListener('click',function(){
         display.textContent += this.innerHTML;
+    });  
+}
+//push functions to display
+let functionBtns = document.querySelector('.functions');
+let functionsChildren = functionBtns.children
+for (i of functionsChildren){
+    i.addEventListener('click',function(){
+        display.textContent += this.innerHTML;
     });
-    
 }
-let clearBtn = document.getElementById('clear');
-
-clearBtn.addEventListener('click',() => clear());
-
-//make buttons push to display
-function displayNumber(i){
-    buttonPressed = i;
-    switch (buttonPressed){
-        case 0 : display.textContent += '7';
-                console.log(buttonPressed);
-                break;
-    }
-}
-function clear(){
-    display.textContent = "";
-}
+document.getElementById('clear')
+.addEventListener('click',() => display.textContent = "");
 
 function operate(a, operator, b){
     let firstNumber = a,
     secondNumber = b,
     findOperator = operator;
     switch (findOperator){
-        case '+' : return add(firstNumber,secondNumber);
+        case '+' : display.textContent = add(firstNumber,secondNumber);
         break;
-        case '-' : return subtract(firstNumber,secondNumber);
+        case '-' : display.textContent = subtract(firstNumber,secondNumber);
         break;
-        case '*' : return multiply(firstNumber,secondNumber);
+        case '*' : display.textContent = multiply(firstNumber,secondNumber);
         break;
-        case '/' : return divide(firstNumber,secondNumber);
+        case '/' : display.textContent = divide(firstNumber,secondNumber);
         break;
     }
 }
