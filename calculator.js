@@ -1,3 +1,4 @@
+
 //display
 const display = document.querySelector('.display');
 display.textContent;
@@ -14,11 +15,31 @@ let functionBtns = document.querySelector('.functions');
 let functionsChildren = functionBtns.children
 for (i of functionsChildren){
     i.addEventListener('click',function(){
+        a = display.textContent;
         display.textContent += this.innerHTML;
+        operator += this.innerHTML;
     });
 }
 document.getElementById('clear')
-.addEventListener('click',() => display.textContent = "");
+.addEventListener('click',() => {display.textContent = "";
+    a = undefined;
+    operator = "";
+    b = undefined;
+});
+//operate functionality
+//when an operator is pressed push display content to array[0], push operator to array[1]
+//when operator button is pressed push whatever is after operator to array[2]
+//split array into a = array[0], operator = array[1], b = array[2]
+//pass these into the operator function 
+const operateBtn = document.getElementById('operate');
+let a,
+    operator="",
+    b;
+operateBtn.addEventListener('click',()=>{
+    b = display.textContent.slice((a+operator).length);
+    operate(a, operator, b);
+    operator = "";
+});
 
 function operate(a, operator, b){
     let firstNumber = a,
@@ -34,6 +55,7 @@ function operate(a, operator, b){
         case '/' : display.textContent = divide(firstNumber,secondNumber);
         break;
     }
+    
 }
 function add(a, b){
     let firstNumber = a,
